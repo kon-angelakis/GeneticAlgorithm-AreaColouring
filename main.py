@@ -120,8 +120,7 @@ MAX_FITNESS = sum(len(values) for values in NEIGHBOURING_NODES.values()) # The m
 
 population = create_solutions(NUMBER_OF_SOLUTIONS)
 for g in range(GENERATIONS):
-    population, best_current_fitness, best_current_sequence, current_mutations = next_gen(
-        population, MUTATION_CHANCE, NUMBER_OF_ELITES)
+    population, best_current_fitness, best_current_sequence, current_mutations = next_gen(population, MUTATION_CHANCE, NUMBER_OF_ELITES)
     # Keep the first gen sequence for plotting later
     if g == 0:
         first_gen = best_current_sequence
