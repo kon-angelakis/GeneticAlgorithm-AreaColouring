@@ -7,6 +7,9 @@
 ![image](https://github.com/kon-angelakis/GeneticAlgorithm-AreaColouring/assets/56235553/6b65ebe9-9f5d-455f-8605-18dacc0dc051)  
 #### Colors = Red, Blue, Green, Yellow
 
+#### A solution:  
+![image](https://github.com/kon-angelakis/GeneticAlgorithm-AreaColouring/assets/56235553/4f193e52-67d6-4172-8927-c7e6b2368263)
+
 ----
 
 In the base version of the code the crossover going to be used is single point. Elitism will also be used for the next generation of solutions with the number of elites being at least 1 or 1% of the population.
