@@ -90,9 +90,7 @@ def plot_graph(neighbour_nodes, node_colors, title, ax):
     for node, neighbours in neighbour_nodes.items():
         for neighbour in neighbours:
             G.add_edge(node, neighbour)
-
-    pos = nx.spring_layout(G, seed=100)  # seed for reproducibility
-
+    pos = nx.spring_layout(G, seed=100)
     nx.draw_networkx_nodes(
         G, pos, node_color=[node_colors[node-1] for node in G.nodes()],
         node_size=500, cmap=plt.cm.viridis, ax=ax, edgecolors='black'
