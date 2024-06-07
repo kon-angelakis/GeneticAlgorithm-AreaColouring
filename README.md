@@ -8,7 +8,7 @@
 #### Colors = Red, Blue, Green, Yellow
 
 #### A solution:  
-![image](https://github.com/kon-angelakis/GeneticAlgorithm-AreaColouring/assets/56235553/4f193e52-67d6-4172-8927-c7e6b2368263)
+![image](https://github.com/kon-angelakis/GeneticAlgorithm-AreaColouring/assets/56235553/32c9ab19-2dcc-4e9a-a7ee-b67e0cb29fe3)
 
 ----
 
