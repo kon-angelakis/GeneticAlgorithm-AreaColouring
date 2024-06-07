@@ -90,7 +90,9 @@ def plot_graph(neighbour_nodes, node_colors, title, ax):
     for node, neighbours in neighbour_nodes.items():
         for neighbour in neighbours:
             G.add_edge(node, neighbour)
-    pos = nx.spring_layout(G, seed=100)
+
+    pos = nx.spring_layout(G, seed=100)  # seed for reproducibility
+
     nx.draw_networkx_nodes(
         G, pos, node_color=[node_colors[node-1] for node in G.nodes()],
         node_size=500, cmap=plt.cm.viridis, ax=ax, edgecolors='black'
@@ -117,11 +119,12 @@ NUMBER_OF_ELITES = max(1, NUMBER_OF_SOLUTIONS // 100) # 1% of the population wit
 MAX_FITNESS = sum(len(values) for values in NEIGHBOURING_NODES.values()) # The max fitness is the maximum achievable fitness when all neighbours have different colors
 
 population = create_solutions(NUMBER_OF_SOLUTIONS)
+first_gen = random.choice(population)
+
 for g in range(GENERATIONS):
     population, best_current_fitness, best_current_sequence, current_mutations = next_gen(population, MUTATION_CHANCE, NUMBER_OF_ELITES)
     # Keep the first gen sequence for plotting later
-    if g == 0:
-        first_gen = best_current_sequence
+
     print(f"Generation: {g} | Mutations: {current_mutations} / {len(population)} | Current fitness: {format(best_current_fitness, '.3f')} | Solution: {population[1]}")
 
 # Plotting the graph
