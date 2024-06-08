@@ -125,7 +125,7 @@ for g in range(GENERATIONS):
     population, best_current_fitness, best_current_sequence, current_mutations = next_gen(population, MUTATION_CHANCE, NUMBER_OF_ELITES)
     # Keep the first gen sequence for plotting later
 
-    print(f"Generation: {g} | Mutations: {current_mutations} / {len(population)} | Current fitness: {format(best_current_fitness, '.3f')} | Solution: {population[1]}")
+    print(f"Generation: {g} | Mutations: {current_mutations} / {len(population)} | Current fitness: {format(best_current_fitness, '.3f')} | Solution: {best_current_sequence}")
 
 # Plotting the graph
 fig, ax = plt.subplots(1, 2, figsize=(14, 7))
