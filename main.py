@@ -49,11 +49,15 @@ def reproduce(parent1, parent2):
 
 
 def next_gen(population, mutation_probability=0, elite_count=0):
+    
+    gen_mutations = 0
+    for individual in population:
+        gen_mutations += mutate(individual, mutation_probability)
+    
     fitnesses = calculate_fitness(population)
     best_fit_pos = fitnesses.index(max(fitnesses))
     best_fitness = fitnesses[best_fit_pos] / MAX_FITNESS
     best_sequence = population[best_fit_pos]
-    gen_mutations = 0
 
     sorted_population = [x for _, x in sorted(
         zip(fitnesses, population), reverse=True)]
@@ -68,9 +72,6 @@ def next_gen(population, mutation_probability=0, elite_count=0):
         for child in children:
             if len(next_generation) < len(population):
                 next_generation.append(child)
-
-    for individual in next_generation:
-        gen_mutations += mutate(individual, mutation_probability)
 
     return next_generation, best_fitness, best_sequence, gen_mutations
 
